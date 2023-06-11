@@ -22,7 +22,7 @@ namespace API.Business
                 throw new ArgumentException("The Email Field is invalid");
 
             if(string.IsNullOrEmpty(req.username))
-                throw new ArgumentException("The Username field is invalid");
+                throw new ArgumentException("The Username Field is invalid");
 
             if(string.IsNullOrEmpty(req.newpassword))
                 throw new ArgumentException("The Password Field is invalid");
@@ -41,5 +41,6 @@ namespace API.Business
             return isValid;
         }
                 
+        
     }
 }

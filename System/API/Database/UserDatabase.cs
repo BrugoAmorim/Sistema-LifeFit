@@ -17,5 +17,16 @@ namespace API.Database
 
             return newuser;
         }
+
+        public List<Models.TbUsuario> listUsers(){
+
+            return ctx.TbUsuarios.ToList();
+        }
+
+        public Models.TbUsuario FirstUser(string email){
+
+            Models.TbUsuario userData = listUsers().FirstOrDefault(x => x.DsEmail == email);
+            return userData;
+        }
     }
 }

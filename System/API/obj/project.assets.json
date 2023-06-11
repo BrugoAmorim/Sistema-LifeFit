@@ -1254,11 +1254,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bruni\\OneDrive\\Documentos\\Projetos Pessoais\\Projeto-LifeFit\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\bruni\\OneDrive\\Documentos\\Projetos Pessoais\\Projeto-LifeFit\\System\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\bruni\\OneDrive\\Documentos\\Projetos Pessoais\\Projeto-LifeFit\\API\\API.csproj",
+      "projectPath": "C:\\Users\\bruni\\OneDrive\\Documentos\\Projetos Pessoais\\Projeto-LifeFit\\System\\API\\API.csproj",
       "packagesPath": "C:\\Users\\bruni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bruni\\OneDrive\\Documentos\\Projetos Pessoais\\Projeto-LifeFit\\API\\obj\\",
+      "outputPath": "C:\\Users\\bruni\\OneDrive\\Documentos\\Projetos Pessoais\\Projeto-LifeFit\\System\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bruni\\AppData\\Roaming\\NuGet\\NuGet.Config",

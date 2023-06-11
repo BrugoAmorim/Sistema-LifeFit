@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LhHL+oFqe28kVxH2GGRpLLVR7jgr1PmIGu5Y0ajgIptDiemu4mR/Rcg+s6GRGHfY7si6vJ1U2L9ISKArVhNw3A==",
+  "dgSpecHash": "AuoUYnM0BMZPG/fxxLi+rWdO35BwkoGx4v+jlhTjnS6ocE+ckr4bcoXi6nM5dREvH2zyp6nhsYpDLjtwETcj/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bruni\\OneDrive\\Documentos\\Projetos Pessoais\\Projeto-LifeFit\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\bruni\\OneDrive\\Documentos\\Projetos Pessoais\\Projeto-LifeFit\\System\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruni\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\bruni\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.2\\microsoft.entityframeworkcore.7.0.2.nupkg.sha512",
