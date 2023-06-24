@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -18,7 +19,7 @@ namespace API.Controllers
 
             Models.DbLifeFitContext db = new Models.DbLifeFitContext();
 
-            List<Models.TbUsuario> users = db.TbUsuarios.ToList();
+            List<Models.TbUsuario> users = db.TbUsuarios.Include(x => x.TbRotinaTreinos).ToList();
             return users;
         }
     

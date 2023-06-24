@@ -96,3 +96,7 @@ C:\Users\bruni\OneDrive\Documentos\Projetos Pessoais\Projeto-LifeFit\System\API\
 C:\Users\bruni\OneDrive\Documentos\Projetos Pessoais\Projeto-LifeFit\System\API\obj\Debug\net6.0\API.pdb
 C:\Users\bruni\OneDrive\Documentos\Projetos Pessoais\Projeto-LifeFit\System\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\bruni\OneDrive\Documentos\Projetos Pessoais\Projeto-LifeFit\System\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\bruni\OneDrive\Documentos\Projetos Pessoais\Projeto-LifeFit\System\API\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\bruni\OneDrive\Documentos\Projetos Pessoais\Projeto-LifeFit\System\API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\bruni\OneDrive\Documentos\Projetos Pessoais\Projeto-LifeFit\System\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\bruni\OneDrive\Documentos\Projetos Pessoais\Projeto-LifeFit\System\API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

@@ -19,7 +19,7 @@ public partial class TbExercicio
 
     public int? IdDiaSemana { get; set; }
 
-    public int? IdRotina { get; set; }
+    public int IdRotina { get; set; }
 
     public virtual TbDiaSemana IdDiaSemanaNavigation { get; set; }
 

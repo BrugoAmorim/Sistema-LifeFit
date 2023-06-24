@@ -115,7 +115,8 @@ public partial class DbLifeFitContext : DbContext
             entity.Property(e => e.DtRotinaCriada)
                 .HasColumnType("datetime")
                 .HasColumnName("dt_rotina_criada");
-            entity.Property(e => e.IdUsuario).HasColumnName("id_usuario");
+            entity.Property(e => e.IdUsuario).IsRequired(false)
+            .HasColumnName("id_usuario");
 
             entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.TbRotinaTreinos)
                 .HasForeignKey(d => d.IdUsuario)
