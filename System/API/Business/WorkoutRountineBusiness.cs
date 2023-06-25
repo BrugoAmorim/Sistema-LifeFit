@@ -7,8 +7,10 @@ namespace API.Business
 {
     public class WorkoutRountineBusiness
     {
-        Utils.WorkoutRountineUtils Workout = new Utils.WorkoutRountineUtils();
         Database.WorkoutRoutineDatabase dbWorkout = new Database.WorkoutRoutineDatabase();
+        Database.ExerciseDatabase dbExercise = new Database.ExerciseDatabase();
+        Utils.WorkoutRountineUtils WorkoutUtils = new Utils.WorkoutRountineUtils();
+        Utils.ExerciseUtils ExerciseUtils = new Utils.ExerciseUtils();
 
         public Models.Response.WorkoutRoutineResponse NewWorkout(Models.Request.WorkoutRoutineRequest req){;
 
@@ -16,14 +18,14 @@ namespace API.Business
             validNewRoutine.isValidRoutine(req);
 
             Models.TbRotinaTreino routine = dbWorkout.SaveRoutine(req);
-            List<Models.TbExercicio> exercisesOfRoutine = dbWorkout.GetExercises(routine.IdRotina);
+            List<Models.TbExercicio> exercisesOfRoutine = dbExercise.GetExercises(routine.IdRotina);
 
-            Models.Response.WorkoutRoutineResponse BoxRes = Workout.ConvertTbToResRoutine(routine);
+            Models.Response.WorkoutRoutineResponse BoxRes = WorkoutUtils.ConvertTbToResRoutine(routine);
             List<Models.Response.ExerciseResponse> lt = new List<Models.Response.ExerciseResponse>();
 
             foreach(Models.TbExercicio e in exercisesOfRoutine){
 
-                lt.Add(Workout.ConvertTbtoResExercise(e));
+                lt.Add(ExerciseUtils.ConvertTbtoResExercise(e));
             }
 
             BoxRes.exercises = lt;
@@ -32,8 +34,8 @@ namespace API.Business
     
         public List<Models.TbRotinaTreino> GetMyWorkout(int iduser){
 
-            Database.UserDatabase dbUser = new Database.UserDatabase();
             List<Models.TbRotinaTreino> Workouts = dbWorkout.GetMyWorkouts(iduser);
+            Database.UserDatabase dbUser = new Database.UserDatabase();
 
             if(dbUser.UserExist(iduser) == null)
                 throw new ArgumentException("This user was not found");
@@ -43,5 +45,6 @@ namespace API.Business
 
             return Workouts;   
         }
+
     }
 }

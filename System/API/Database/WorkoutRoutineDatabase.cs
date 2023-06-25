@@ -10,6 +10,8 @@ namespace API.Database
     {
         Models.DbLifeFitContext ctx = new Models.DbLifeFitContext();
         Utils.WorkoutRountineUtils workout = new Utils.WorkoutRountineUtils();
+        Utils.ExerciseUtils exerciseUtils = new Utils.ExerciseUtils();
+
         public Models.TbRotinaTreino SaveRoutine(Models.Request.WorkoutRoutineRequest req){
 
             Models.TbRotinaTreino routineWorkout = workout.ConvertReqToTbRoutine(req);
@@ -18,7 +20,7 @@ namespace API.Database
 
             foreach(Models.Request.ExercisesRequest i in req.exercise){
 
-                Models.TbExercicio exercise = workout.ConvertReqToTbExercise(i, routineWorkout.IdRotina);
+                Models.TbExercicio exercise = exerciseUtils.ConvertReqToTbExercise(i, routineWorkout.IdRotina);
                 ctx.TbExercicios.Add(exercise);
                 ctx.SaveChanges();
             }
@@ -28,14 +30,7 @@ namespace API.Database
 
         public Models.TbRotinaTreino GetWorkoutRoutine(int id){
 
-            return ctx.TbRotinaTreinos.Include(x => x.IdUsuarioNavigation).First(x => x.IdRotina == id);
-        }
-
-        public List<Models.TbExercicio> GetExercises(int idRoutine){
-
-            return ctx.TbExercicios.Where(x => x.IdRotina == idRoutine)
-                                   .Include(x => x.IdDiaSemanaNavigation)
-                                   .ToList();
+            return ctx.TbRotinaTreinos.Include(x => x.IdUsuarioNavigation).FirstOrDefault(x => x.IdRotina == id);
         }
     
         public List<Models.TbRotinaTreino> GetMyWorkouts(int iduser){
