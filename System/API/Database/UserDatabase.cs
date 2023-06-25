@@ -25,8 +25,12 @@ namespace API.Database
 
         public Models.TbUsuario FirstUser(string email){
 
-            Models.TbUsuario userData = listUsers().FirstOrDefault(x => x.DsEmail == email);
-            return userData;
+            return listUsers().FirstOrDefault(x => x.DsEmail == email);
+        }
+
+        public Models.TbUsuario UserExist(int iduser){
+
+            return listUsers().FirstOrDefault(x => x.IdUsuario == iduser);
         }
     }
 }

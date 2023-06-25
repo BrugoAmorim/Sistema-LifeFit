@@ -16,9 +16,9 @@ namespace API.Business
             validNewRoutine.isValidRoutine(req);
 
             Models.TbRotinaTreino routine = dbWorkout.SaveRoutine(req);
-            Models.Response.WorkoutRoutineResponse BoxRes = Workout.ConvertTbToResRoutine(routine);
-
             List<Models.TbExercicio> exercisesOfRoutine = dbWorkout.GetExercises(routine.IdRotina);
+
+            Models.Response.WorkoutRoutineResponse BoxRes = Workout.ConvertTbToResRoutine(routine);
             List<Models.Response.ExerciseResponse> lt = new List<Models.Response.ExerciseResponse>();
 
             foreach(Models.TbExercicio e in exercisesOfRoutine){
@@ -28,6 +28,20 @@ namespace API.Business
 
             BoxRes.exercises = lt;
             return BoxRes;
+        }
+    
+        public List<Models.TbRotinaTreino> GetMyWorkout(int iduser){
+
+            Database.UserDatabase dbUser = new Database.UserDatabase();
+            List<Models.TbRotinaTreino> Workouts = dbWorkout.GetMyWorkouts(iduser);
+
+            if(dbUser.UserExist(iduser) == null)
+                throw new ArgumentException("This user was not found");
+
+            if(Workouts.Count == 0)
+                throw new ArgumentException("You don't have any training created");            
+
+            return Workouts;   
         }
     }
 }

@@ -37,5 +37,10 @@ namespace API.Database
                                    .Include(x => x.IdDiaSemanaNavigation)
                                    .ToList();
         }
+    
+        public List<Models.TbRotinaTreino> GetMyWorkouts(int iduser){
+
+            return ctx.TbRotinaTreinos.Where(x => x.IdUsuario == iduser).ToList();
+        }
     }
 }

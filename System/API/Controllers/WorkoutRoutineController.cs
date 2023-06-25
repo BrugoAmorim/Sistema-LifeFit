@@ -10,7 +10,7 @@ namespace API.Controllers
     [Route("[controller]")]
     public class WorkoutRoutineController
     {
-        
+        Utils.WorkoutRountineUtils Workout = new Utils.WorkoutRountineUtils();
         Business.WorkoutRountineBusiness IsValidRoutine = new Business.WorkoutRountineBusiness();
 
         [HttpPost("createroutine")]
@@ -28,6 +28,28 @@ namespace API.Controllers
                 );
             }
             catch(Exception ex){
+
+                return new BadRequestObjectResult(
+                    new Models.Response.ErrorResponse(ex.Message, 400)
+                );
+            }
+        }
+
+        [HttpGet("getmyroutine/{iduser}")]
+        public ActionResult<List<Models.Response.MyRoutinesResponse>> get_MyWorkout(int iduser){
+
+            try{
+                List<Models.TbRotinaTreino> TbMyRoutines = IsValidRoutine.GetMyWorkout(iduser);
+
+                List<Models.Response.MyRoutinesResponse> routs = new List<Models.Response.MyRoutinesResponse>();
+                foreach(Models.TbRotinaTreino i in TbMyRoutines){
+
+                    routs.Add(Workout.ConvertToRoutineRes(i));
+                }
+
+                return routs;
+            }
+            catch(System.Exception ex){
 
                 return new BadRequestObjectResult(
                     new Models.Response.ErrorResponse(ex.Message, 400)

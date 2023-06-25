@@ -67,5 +67,16 @@ namespace API.Utils
 
             return routine;
         }
+    
+        public Models.Response.MyRoutinesResponse ConvertToRoutineRes(Models.TbRotinaTreino TbRout){
+
+            Models.Response.MyRoutinesResponse Routin = new Models.Response.MyRoutinesResponse();
+            Routin.idRoutine = TbRout.IdRotina;
+            Routin.Routinename = TbRout.DsNomeRotina;
+            Routin.Duration = TbRout.DsTempoDuracao;
+            Routin.RoutineCreated = TbRout.DtRotinaCriada;
+
+            return Routin;
+        }
     }
 }
