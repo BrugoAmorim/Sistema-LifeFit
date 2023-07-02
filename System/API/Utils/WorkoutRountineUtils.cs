@@ -19,7 +19,7 @@ namespace API.Utils
             return tb;
         }
     
-        public Models.Response.WorkoutRoutineResponse ConvertTbToResRoutine(Models.TbRotinaTreino req){
+        public Models.Response.WorkoutRoutineResponse ConvertTbToResRoutine(Models.TbRotinaTreino req, List<Models.TbExercicio> exers){
 
             Models.Response.WorkoutRoutineResponse routine = new Models.Response.WorkoutRoutineResponse(); 
             routine.idworkoutroutine = req.IdRotina;
@@ -36,6 +36,15 @@ namespace API.Utils
                 routine.username = req.IdUsuarioNavigation.DsNome;    
             }
 
+            Utils.ExerciseUtils Exer = new ExerciseUtils();
+            List<Models.Response.ExerciseResponse> lt = new List<Models.Response.ExerciseResponse>();
+
+            foreach(Models.TbExercicio e in exers){
+
+                lt.Add(Exer.ConvertTbtoResExercise(e));
+            }
+
+            routine.exercises = lt;
             return routine;
         }
     
@@ -49,5 +58,6 @@ namespace API.Utils
 
             return Routin;
         }
+    
     }
 }

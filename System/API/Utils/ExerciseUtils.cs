@@ -35,5 +35,19 @@ namespace API.Utils
 
             return exRes;
         }
+    
+        public Models.TbExercicio ConvertExerUpToTbExercise(int idroutine, Models.Request.WorkoutUpdateRequest.exerciseUpdate req){
+
+            Models.TbExercicio exTb = new Models.TbExercicio();
+            exTb.DsExercicio = req.exercise;
+            exTb.DsSeriesERepeticoes = req.seriesandrepeats;
+            exTb.DsTempoDescanso = req.restTime;
+            exTb.DsCargaAquecimento = req.warmingLoad;
+            exTb.DsCargaMaxima = req.maximumLoad;
+            exTb.IdDiaSemana = req.idweekDay;
+            exTb.IdRotina = idroutine;
+        
+            return exTb;
+        }
     }
 }

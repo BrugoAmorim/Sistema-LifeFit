@@ -72,5 +72,26 @@ namespace API.Controllers
                 );
             }
         }
+
+        [HttpPut("updatemyroutine/{iduser}/{idroutine}")]
+        public ActionResult<Models.Response.WorkoutRoutineResponse> update_MyWorkout(int iduser, int idroutine, Models.Request.WorkoutUpdateRequest req){
+
+            try{
+                Models.Response.WorkoutRoutineResponse BoxRes = IsValidRoutine.UpdateMyWorkout(iduser, idroutine, req);
+                return BoxRes;       
+            }
+            catch(Models.Custom.CustomExercExerciseUpdt ex){
+
+                return new BadRequestObjectResult(
+                    new Models.Custom.CustomExercExerciseUpdt(ex.message, ex.Exer)
+                );
+            }
+            catch(System.Exception ex){
+
+                return new BadRequestObjectResult(
+                    new Models.Response.ErrorResponse(ex.Message, 400)
+                );
+            }
+        }
     }
 }

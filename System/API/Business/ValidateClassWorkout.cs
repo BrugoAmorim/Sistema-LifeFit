@@ -9,14 +9,14 @@ namespace API.Business
     {
         public void isValidRoutine(Models.Request.WorkoutRoutineRequest req){
 
-            if(string.IsNullOrEmpty(req.routinename))
-                throw new ArgumentException("The Routinename field is invalid");
+                if(string.IsNullOrEmpty(req.routinename))
+                    throw new ArgumentException("The Routinename field is invalid");
 
-            if(string.IsNullOrEmpty(req.duration))
-                throw new ArgumentException("The Duration field is invalid");
-            
-            if(req.exercise.Count == 0)
-                throw new ArgumentException("You need to add at least exercise");
+                if(string.IsNullOrEmpty(req.duration))
+                    throw new ArgumentException("The Duration field is invalid");
+                
+                if(req.exercise.Count == 0)
+                    throw new ArgumentException("You need to add at least exercise");
 
             foreach(Models.Request.ExercisesRequest i in req.exercise){
 
@@ -44,7 +44,7 @@ namespace API.Business
                 throw new Models.Custom.CustomExeceptionExercise("The MaximumLoad field is invalid", exerciseReq);
 
             if(daysDb.getWeekDay(exerciseReq.idweekDay) == null)
-                throw new ArgumentException("This WeekDay was not found");
+                throw new Models.Custom.CustomExeceptionExercise("This WeekDay was not found", exerciseReq);
         }
     }
 }

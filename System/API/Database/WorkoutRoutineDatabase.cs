@@ -59,5 +59,15 @@ namespace API.Database
             ctx.TbRotinaTreinos.Remove(workoutRoutine);
             ctx.SaveChanges();
         }
+    
+        public Models.TbRotinaTreino UpdateMyWorkout(int idroutine, Models.Request.WorkoutUpdateRequest req){
+
+            Models.TbRotinaTreino Work = GetWorkoutRoutine(idroutine);
+            Work.DsNomeRotina = req.routinename;
+            Work.DsTempoDuracao = req.duration;
+
+            ctx.SaveChanges();
+            return Work;
+        }
     }
 }
