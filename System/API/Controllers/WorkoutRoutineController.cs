@@ -8,7 +8,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WorkoutRoutineController
+    public class WorkoutRoutineController : ControllerBase
     {
         Utils.WorkoutRountineUtils Workout = new Utils.WorkoutRountineUtils();
         Business.WorkoutRountineBusiness IsValidRoutine = new Business.WorkoutRountineBusiness();
@@ -48,6 +48,22 @@ namespace API.Controllers
                 }
 
                 return routs;
+            }
+            catch(System.Exception ex){
+
+                return new BadRequestObjectResult(
+                    new Models.Response.ErrorResponse(ex.Message, 400)
+                );
+            }
+        }
+
+        [HttpDelete("deletemyroutine/{iduser}/{idroutine}")]
+        public ActionResult<Models.Response.SuccessResponse> delete_MyWorkout(int iduser, int idroutine){
+
+            try{
+
+                IsValidRoutine.DeleteMyWorkout(iduser, idroutine);
+                return new Models.Response.SuccessResponse("The Workout routine has been deleted", 200);
             }
             catch(System.Exception ex){
 

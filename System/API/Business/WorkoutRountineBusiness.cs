@@ -46,5 +46,18 @@ namespace API.Business
             return Workouts;   
         }
 
+        public void DeleteMyWorkout(int iduser, int idroutine){
+
+            Database.UserDatabase userDb = new Database.UserDatabase();
+            Models.TbRotinaTreino workout = dbWorkout.GetSpecificWorkout(iduser, idroutine);
+
+            if(userDb.UserExist(iduser) == null)
+                throw new ArgumentException("This user is not exist");
+
+            if(workout == null)
+                throw new ArgumentException("This workout routine was not found");
+
+            dbWorkout.DeleteMyWorkout(idroutine);
+        }
     }
 }

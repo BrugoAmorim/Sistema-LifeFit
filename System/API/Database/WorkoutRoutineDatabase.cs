@@ -37,5 +37,27 @@ namespace API.Database
 
             return ctx.TbRotinaTreinos.Where(x => x.IdUsuario == iduser).ToList();
         }
+
+        public Models.TbRotinaTreino GetSpecificWorkout(int iduser, int idroutine){
+
+            return ctx.TbRotinaTreinos.FirstOrDefault(x => x.IdUsuario == iduser && x.IdRotina == idroutine);
+        }
+    
+        public void DeleteMyWorkout(int idroutine){
+
+            Models.TbRotinaTreino workoutRoutine = ctx.TbRotinaTreinos.First(x => x.IdRotina == idroutine);
+            List<Models.TbExercicio> exercises = ctx.TbExercicios
+                                                    .Where(x => x.IdRotina == workoutRoutine.IdRotina)
+                                                    .ToList();    
+        
+            foreach(Models.TbExercicio item in exercises){
+
+                ctx.TbExercicios.Remove(item);
+                ctx.SaveChanges();
+            }
+
+            ctx.TbRotinaTreinos.Remove(workoutRoutine);
+            ctx.SaveChanges();
+        }
     }
 }
