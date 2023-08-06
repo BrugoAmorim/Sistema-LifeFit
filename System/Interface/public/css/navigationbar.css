@@ -64,15 +64,15 @@
     cursor: pointer;
 }
 
-.button-1:hover{
-    transition: 0.2s;
-    background-color: #61b629a9;
-}
+    .button-1:hover{
+        transition: 0.2s;
+        background-color: #61b629a9;
+    }
 
-.button-1:active{
-    transition: 0.3s;
-    background-color: #61b62977;
-}
+    .button-1:active{
+        transition: 0.3s;
+        background-color: #61b62977;
+    }
 
 .button-2{
     height: 100%;
@@ -96,4 +96,28 @@
 .button-2:active{
     transition: 0.3s;
     background-color: #3588567c;
+}
+
+.button-3{
+    height: 100%;
+    width: 100%;
+
+    border: none;
+    border-radius: 6px;
+    background-color: #cf1515;
+    outline: none;
+
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+}
+
+.button-3:hover{
+    transition: 0.2s;
+    background-color: #cf1515b7;
+}
+
+.button-3:active{
+    transition: 0.3s;
+    background-color: #cf151583;
 }
