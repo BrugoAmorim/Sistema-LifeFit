@@ -13,5 +13,6 @@ namespace API.Models.Response
         public string emailuser { get; set; }
         public DateTime accountcreated { get; set; }
         public DateTime accountupdated { get; set; }
+        public int amountworkout { get; set; }
     }
 }

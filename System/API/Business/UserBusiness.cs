@@ -57,5 +57,19 @@ namespace API.Business
 
             return UtilsUser.ConvertToUserRes(tbUser);
         }
+    
+        public Models.Response.UserResponse GetUserData(int iduser){
+
+            Database.WorkoutRoutineDatabase dbWork = new Database.WorkoutRoutineDatabase();
+
+            Models.TbUsuario userdata = DtUser.UserExist(iduser);
+            if(userdata == null)
+                throw new ArgumentException("This user was not found");
+
+            Models.Response.UserResponse res = UtilsUser.ConvertToUserRes(userdata);
+            res.amountworkout = dbWork.GetMyWorkouts(iduser).Count;
+
+            return res;
+        }
     }
 }
