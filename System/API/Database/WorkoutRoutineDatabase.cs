@@ -69,5 +69,12 @@ namespace API.Database
             ctx.SaveChanges();
             return Work;
         }
+    
+        public void DeleteAllMyWorkout(int iduser){
+
+            List<Models.TbRotinaTreino> myworkouts = GetMyWorkouts(iduser);
+            foreach(Models.TbRotinaTreino i in myworkouts)
+                DeleteMyWorkout(i.IdRotina);
+        }
     }
 }

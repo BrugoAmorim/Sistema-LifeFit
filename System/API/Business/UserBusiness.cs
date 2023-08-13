@@ -10,6 +10,7 @@ namespace API.Business
         
         ValidateClassUser validate = new ValidateClassUser();
         Utils.UserUtils UtilsUser = new Utils.UserUtils();
+        Database.WorkoutRoutineDatabase dbWork = new Database.WorkoutRoutineDatabase();
         Database.UserDatabase DtUser = new Database.UserDatabase(); 
         public Models.Response.UserResponse CreateAccount(Models.Request.UserRequest req){
 
@@ -60,16 +61,23 @@ namespace API.Business
     
         public Models.Response.UserResponse GetUserData(int iduser){
 
-            Database.WorkoutRoutineDatabase dbWork = new Database.WorkoutRoutineDatabase();
-
             Models.TbUsuario userdata = DtUser.UserExist(iduser);
-            if(userdata == null)
-                throw new ArgumentException("This user was not found");
+            validate.IsValidIdUser(iduser);
 
             Models.Response.UserResponse res = UtilsUser.ConvertToUserRes(userdata);
             res.amountworkout = dbWork.GetMyWorkouts(iduser).Count;
 
             return res;
+        }
+    
+        public void DeleteAllUserWorkout(int iduser){
+
+            validate.IsValidIdUser(iduser);
+
+            if(dbWork.GetMyWorkouts(iduser).Count <= 0)
+                throw new ArgumentException("You have no exercise routine");
+
+            dbWork.DeleteAllMyWorkout(iduser);
         }
     }
 }

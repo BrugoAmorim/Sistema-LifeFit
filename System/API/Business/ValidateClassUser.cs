@@ -40,6 +40,14 @@ namespace API.Business
 
             return isValid;
         }
+
+        public void IsValidIdUser(int iduser){
+
+            Database.UserDatabase DbUser = new Database.UserDatabase();
+            
+            if(DbUser.UserExist(iduser) == null)
+                throw new ArgumentException("This user was not found");
+        }
                    
     }
 }

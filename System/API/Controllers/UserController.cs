@@ -27,5 +27,20 @@ namespace API.Controllers
                 );
             }
         }
+
+        [HttpDelete("DeleteAllWorkout/{iduser}")]
+        public ActionResult<Models.Response.SuccessResponse> DeleteAllUserWorkout(int iduser){
+
+            try{
+                userBusiness.DeleteAllUserWorkout(iduser);
+                return new Models.Response.SuccessResponse("you deleted all your exercise routines", 200);
+            }
+            catch(System.Exception ex){
+
+                return new BadRequestObjectResult(
+                    new Models.Response.ErrorResponse(ex.Message, 400)
+                );
+            }
+        }
     }
 }
