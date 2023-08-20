@@ -19,5 +19,24 @@ namespace API.Business
 
             return dbExercise.GetExercises(idRoutine);
         }
+
+        public void delExercise(int idexer, int idroutine, int iduser){
+
+            Database.UserDatabase dbUser = new Database.UserDatabase();
+
+            Models.TbUsuario user = dbUser.UserExist(iduser);
+            if(user == null)
+                throw new ArgumentException("This user was not found");
+
+            Models.TbRotinaTreino rount = dbWorkout.GetSpecificWorkout(user.IdUsuario, idroutine);
+            if(rount == null)
+                throw new ArgumentException("This workout routine was not found");
+
+            Models.TbExercicio ex = dbExercise.GetSpecificExercise(idexer, rount.IdRotina);
+            if(ex == null)
+                throw new ArgumentException("This exercise was not found");
+
+            dbExercise.DeleteExercise(idexer);   
+        }
     }
 }

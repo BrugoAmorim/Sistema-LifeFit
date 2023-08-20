@@ -35,5 +35,23 @@ namespace API.Controllers
                 );
             }
         }
+
+        [HttpDelete("deletexercise/{iduser}/{idroutine}/{idexer}")]
+        public ActionResult<Models.Response.SuccessResponse> deleteExercise(int iduser, int idroutine, int idexer){
+
+            try{
+
+                Business.ExerciseBusiness validation = new Business.ExerciseBusiness();
+                validation.delExercise(idexer, idroutine, iduser);
+
+                return new Models.Response.SuccessResponse("This exercise has been deleted", 200); 
+            }
+            catch(System.Exception ex){
+
+                return new BadRequestObjectResult(
+                    new Models.Response.ErrorResponse(ex.Message, 400)
+                );
+            }
+        }
     }
 }

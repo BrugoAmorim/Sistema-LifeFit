@@ -43,5 +43,13 @@ namespace API.Database
 
             return ctx.TbExercicios.FirstOrDefault(x => x.IdExercicio == idExer && x.IdRotina == idroutine);
         }
+
+        public void DeleteExercise(int idexer){
+
+            Models.TbExercicio Ex = ctx.TbExercicios.First(x => x.IdExercicio == idexer);
+            
+            ctx.TbExercicios.Remove(Ex);
+            ctx.SaveChanges();
+        }
     }
 }
