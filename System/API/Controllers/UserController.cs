@@ -42,5 +42,20 @@ namespace API.Controllers
                 );
             }
         }
+
+        [HttpDelete("DeleteMyAccount/{iduser}")]
+        public ActionResult<Models.Response.SuccessResponse> deleteMyAccount(int iduser, string password){
+
+            try{
+                userBusiness.DeleteMyAccount(iduser, password);
+                return new Models.Response.SuccessResponse("Account has been deleted", 200);
+            }
+            catch(System.Exception ex){
+
+                return new BadRequestObjectResult(
+                    new Models.Response.ErrorResponse(ex.Message, 400)
+                );
+            }
+        }
     }
 }

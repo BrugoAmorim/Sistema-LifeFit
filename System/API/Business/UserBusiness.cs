@@ -79,5 +79,17 @@ namespace API.Business
 
             dbWork.DeleteAllMyWorkout(iduser);
         }
+    
+        public void DeleteMyAccount(int iduser, string password){
+
+            Models.TbUsuario userdata = DtUser.UserExist(iduser);
+            if(userdata == null)
+                throw new ArgumentException("This user was not found");
+
+            if(userdata.DsSenha != password)
+                throw new ArgumentException("The password is invalid");
+
+            DtUser.DeleteAccount(iduser);
+        }
     }
 }

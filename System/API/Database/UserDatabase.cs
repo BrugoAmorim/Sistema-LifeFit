@@ -32,5 +32,16 @@ namespace API.Database
 
             return listUsers().FirstOrDefault(x => x.IdUsuario == iduser);
         }
+
+        public void DeleteAccount(int iduser){
+
+            WorkoutRoutineDatabase dbWorkout = new WorkoutRoutineDatabase();
+
+            Models.TbUsuario userdata = ctx.TbUsuarios.First(x => x.IdUsuario == iduser);
+            dbWorkout.DeleteAllMyWorkout(userdata.IdUsuario);
+
+            ctx.TbUsuarios.Remove(userdata);
+            ctx.SaveChanges();
+        }
     }
 }
