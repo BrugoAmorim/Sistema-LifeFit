@@ -43,5 +43,12 @@ namespace API.Database
             ctx.TbUsuarios.Remove(userdata);
             ctx.SaveChanges();
         }
+
+        public void UpdatePassword(Models.TbUsuario userdata, string newpassword){
+
+            userdata.DsSenha = newpassword;
+            userdata.DtContaAtualizada = DateTime.Now;
+            ctx.SaveChanges();
+        }
     }
 }

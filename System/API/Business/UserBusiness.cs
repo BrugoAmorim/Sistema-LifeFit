@@ -16,7 +16,7 @@ namespace API.Business
 
             validate.IsFieldsNull(req);
 
-            if(!req.username.Contains(" ") == true)
+            if(!req.username.Trim().Contains(" ") == true)
                 throw new ArgumentException("Put your first name and last name");
 
             if(!validate.IsEmailValid(req.emailuser) == true)
@@ -29,7 +29,10 @@ namespace API.Business
                 throw new ArgumentException("The passwords are not the same");
 
             if(!validate.IsValidPassword(req.newpassword) == true)
-                throw new ArgumentException("These password is invalid");
+                throw new ArgumentException("The password need to have at least special character, a number, an upper letter and a lower letter");
+
+            if(req.newpassword.Length > 40)
+                throw new ArgumentException("The password is too long");
 
             Models.TbUsuario TbUser = UtilsUser.ConvertToTbUser(req);
             Models.TbUsuario CreatedUser = DtUser.addNewUser(TbUser);
@@ -90,6 +93,28 @@ namespace API.Business
                 throw new ArgumentException("The password is invalid");
 
             DtUser.DeleteAccount(iduser);
+        }
+    
+        public void UpdateMyPassword(int iduser, Models.Request.UpdatePasswordRequest passwordReq){
+
+            Models.TbUsuario user = DtUser.UserExist(iduser);
+
+            if(user == null)
+                throw new ArgumentException("This user was not found");
+
+            if(user.DsSenha != passwordReq.password)
+                throw new ArgumentException("The account password is incorrect");
+
+            if(passwordReq.newpassword != passwordReq.confirmpassword)
+                throw new ArgumentException("The entered passwords is not the same");
+
+            if(!validate.IsValidPassword(passwordReq.newpassword) == true)
+                throw new ArgumentException("The password need to have at least special character, a number, an upper letter and a lower letter");
+
+            if(passwordReq.newpassword.Length > 40)
+                throw new ArgumentException("The password is too long");
+
+            DtUser.UpdatePassword(user, passwordReq.newpassword);
         }
     }
 }

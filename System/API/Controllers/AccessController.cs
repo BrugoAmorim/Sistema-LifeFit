@@ -52,5 +52,21 @@ namespace API.Controllers
                 );
             }
         }
+
+        [HttpPut("updatepassword/{iduser}")]
+        public ActionResult<Models.Response.SuccessResponse> updateMypassword(int iduser, Models.Request.UpdatePasswordRequest passwordReq){
+
+            try{
+
+                business.UpdateMyPassword(iduser, passwordReq);
+                return new Models.Response.SuccessResponse("successfully updated password", 200);
+            }
+            catch(System.Exception ex){
+
+                return new BadRequestObjectResult(
+                    new Models.Response.ErrorResponse(ex.Message, 400)
+                );
+            }
+        }
     }
 }
