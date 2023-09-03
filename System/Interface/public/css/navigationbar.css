@@ -64,15 +64,15 @@
     cursor: pointer;
 }
 
-    .button-1:hover{
-        transition: 0.2s;
-        background-color: #61b629a9;
-    }
+.button-1:hover{
+    transition: 0.2s;
+    background-color: #61b629a9;
+}
 
-    .button-1:active{
-        transition: 0.3s;
-        background-color: #61b62977;
-    }
+.button-1:active{
+    transition: 0.3s;
+    background-color: #61b62977;
+}
 
 .button-2{
     height: 100%;

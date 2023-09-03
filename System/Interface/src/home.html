@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./../public/css/home.css">
     <link rel="stylesheet" href="./../public/css/footer.css">
     <link rel="stylesheet" href="./../public/css/navigationbar.css">
+    <link rel="stylesheet" href="../public/css/criarcontapopup.css">
+    <link rel="stylesheet" href="../public/css/loginpopup.css">
 </head>
 <body>
     <div class="container-master">
@@ -16,10 +18,10 @@
             </div>
             <div class="container-events">
                 <div class="login-event">
-                    <button class="button-1">Entrar</button>
+                    <button class="button-1" onclick="showLogin()">Entrar</button>
                 </div>
                 <div class="createaccount-event">
-                    <button class="button-2">Criar conta</button>
+                    <button class="button-2" onclick="showCreateAccount()">Criar conta</button>
                 </div>
             </div>
         </div>
@@ -61,7 +63,7 @@
                 <p>Nosso sistema permite com que voce crie <span style="color: yellow;">diversas rotinas</span> de treino da <span style="color: yellow;">forma que achar melhor</span>, elas podem ser baixadas para serem usadas <span  style="color: yellow;">onde</span> e <span style="color: yellow;">quando quiser</span>.</p>
             </div>
             <div class="container-button-start">
-                <button class="btn-start-now">Comece a usar agora!</button>
+                <button class="btn-start-now" onclick="showCreateAccount()">Crie uma conta agora!</button>
             </div>
           </div>
         </div>
@@ -86,5 +88,48 @@
             </div>
         </div>
     </div>
+
+    <div id="criarconta-modal" class="criarconta-modal">
+      <div class="criarconta-content">
+        <div class="criarconta-popup">
+          <div class="text-criarconta">
+            <strong>Crie sua conta!</strong>
+            <p style="margin: 0%;">Crie uma conta na plataforma para poder salvar e baixar suas rotinas de treino.</p>
+          </div>
+          <div class="entradas-criarconta">
+            <input type="text" placeholder="Nome de usuário">
+            <input type="text" placeholder="Email de sua preferência">
+            <input type="password" placeholder="Defina sua senha">
+            <input type="password" placeholder="Confirmar sua senha">
+          </div>
+          <div class="eventos-criarconta">
+            <button class="create">Criar conta</button>
+            <button class="cancel" onclick="closeCreateAccount()">Voltar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="login-modal" class="login-modal">
+      <div class="login-content">
+        <div class="login-popup">
+          <div class="text-login">
+            <strong>Login</strong>
+            <p>Entre na sua conta para poder ver suas rotinas de treino.</p>
+          </div>
+          <div class="entradas-login">
+            <input type="text" placeholder="Email" id="input-email">
+            <input type="password" placeholder="Senha" id="input-senha">
+          </div>
+          <div class="eventos-login">
+            <button class="create">Entrar</button>
+            <button class="cancel" onclick="closeLogin()">Voltar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../public/javascript/criarconta.js" module></script>
+    <script src="../public/javascript/login.js" module></script>
 </body>
 </html>
