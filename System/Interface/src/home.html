@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LifeFit</title>
+    <link rel="shortcut icon" href="../public/images/academia.ico" type="image/x-icon">
     <link rel="stylesheet" href="./../public/css/home.css">
     <link rel="stylesheet" href="./../public/css/footer.css">
     <link rel="stylesheet" href="./../public/css/navigationbar.css">
@@ -97,13 +98,13 @@
             <p style="margin: 0%;">Crie uma conta na plataforma para poder salvar e baixar suas rotinas de treino.</p>
           </div>
           <div class="entradas-criarconta">
-            <input type="text" placeholder="Nome de usuário">
-            <input type="text" placeholder="Email de sua preferência">
-            <input type="password" placeholder="Defina sua senha">
-            <input type="password" placeholder="Confirmar sua senha">
+            <input type="text" placeholder="Nome de usuário" id="username-inp">
+            <input type="text" placeholder="Email de sua preferência" id="useremail-inp">
+            <input type="password" placeholder="Defina sua senha" id="password-inp">
+            <input type="password" placeholder="Confirmar sua senha" id="confirmpassword-inp">
           </div>
           <div class="eventos-criarconta">
-            <button class="create">Criar conta</button>
+            <button class="create" onclick="CreateAccount()">Criar conta</button>
             <button class="cancel" onclick="closeCreateAccount()">Voltar</button>
           </div>
         </div>
