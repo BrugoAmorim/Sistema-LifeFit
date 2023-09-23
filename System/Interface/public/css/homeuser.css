@@ -163,6 +163,10 @@ body{
     border-radius: 6px;
 }
 
+.img-size{
+    height: 5em;
+}
+
 .img-download:hover, .img-trash:hover{
     transition: 0.2s;
     background-color: rgba(0, 0, 0, 0.219);
