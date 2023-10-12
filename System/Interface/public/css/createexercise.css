@@ -1,0 +1,367 @@
+body{
+    height: auto;
+    margin: 0%;
+}
+
+.container-title{
+    height: 20vh;
+    background-color: royalblue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    color: white;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-services{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.services{
+    height: 90%;
+    width: 30%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.configs{
+    height: 50%;
+    width: 100%;
+    border: 1px solid gray;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.block-inp{
+    height: 60%;
+    width: 95%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.block-inp input{
+    height: 20%;
+    width: 95%;
+    padding: 3px;
+
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.block-inp select{
+    height: 22%;
+    width: 97%;
+
+    outline: none;
+    font-size: 1.1em;
+    border: 2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.addDay{
+    height: 20%;
+    width: 95%;
+
+    cursor: pointer;
+    outline: none;
+    border: none;
+    
+    color: white;
+    font-size: 1.1em;
+    background-color: royalblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.block-text{
+    height: 30%;
+    width: 95%;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.events{
+    height: 45%;
+    width: 95%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.block-events{
+    height: 43%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.btn-download{
+    height: 45%;
+    width: 95%;
+
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    color: white;
+    background-color: green;
+
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-cameback{
+    height: 35%;
+    width: 95%;
+
+    cursor: pointer;
+    outline: none;
+
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.block-message{
+    height: 20%;
+    width: 95%;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.block-exercises{
+    height: 90%;
+    width: 60%;
+
+    overflow-y: auto;
+    display: block;
+}
+
+.exs{
+    height: 100%;
+    border-left: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block-workouts{
+    min-height: 50%;
+    height: auto;
+    width: 95%;
+    border: 2px solid royalblue;
+
+    margin: 2%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.dayofweek{
+    height: 20%;
+    width: 97%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-day{
+    height: 100%;
+    width: 30%;
+
+    display: flex;
+    align-items: center;
+}
+
+.select-day select{
+    height: 70%;
+    width: 90%;
+
+    outline: none;
+    font-size: 1.1em;
+    border: 2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.delete-workouts{
+    height: 100%;
+    width: 20%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.inp-exer{
+    height: 25%;
+    width: 95%;
+    border: 1px solid black;
+}
+
+.block-exer{
+    height: 65%;
+    width: 97%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.table{
+    height: auto;
+    min-height: 75%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.thead{
+    height: 30%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.tbody{
+    min-height: 70%;
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.info{
+    height: 40%;
+    width: 100%;
+
+    display: flex;
+}
+
+.blc-inp{
+    height: 100%;
+    width: 24%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blc-inp input{
+    height: 70%;
+    width: 90%;
+
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;    
+}
+
+.blc-time{
+    height: 100%;
+    width: 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blc-time select{
+    height: 80%;
+    width: 80%;
+}
+
+.blc-sel{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blc-sel select{
+    height: 80%;
+    width: 85%;
+}
+
+.blc-img{
+    height: 100%;
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.add-exer{
+    height: 25%;
+    width: 95%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.btnAddExer{
+    height: 90%;
+    width: 90%;
+
+    cursor: pointer;
+    outline: none;
+    border: 2px solid black;
+
+    font-size: 1.3em;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: yellow;
+}
