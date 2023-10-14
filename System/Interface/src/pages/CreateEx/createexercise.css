@@ -16,6 +16,7 @@ h1{
     color: white;
     font-size: 2em;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 .container-services{
@@ -95,6 +96,16 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.addDay:hover{
+    transition: 0.2s;
+    background-color: rgb(40, 81, 206);
+}
+
+.addDay:active{
+    transition: 0.3s;
+    background-color: rgb(33, 70, 179);
+}
+
 .block-text{
     height: 30%;
     width: 95%;
@@ -142,6 +153,16 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.btn-download:hover{
+    transition: 0.2s;
+    background-color: rgb(1, 105, 1);
+}
+
+.btn-download:active{
+    transition: 0.3s;
+    background-color: rgb(0, 83, 0);
+}
+
 .btn-cameback{
     height: 35%;
     width: 95%;
@@ -183,8 +204,7 @@ h1{
 }
 
 .block-workouts{
-    min-height: 50%;
-    height: auto;
+    min-height: 60%;
     width: 95%;
     border: 2px solid royalblue;
 
@@ -197,7 +217,7 @@ h1{
 }
 
 .dayofweek{
-    height: 20%;
+    height: 15%;
     width: 97%;
 
     display: flex;
@@ -240,17 +260,16 @@ h1{
 }
 
 .block-exer{
-    height: 65%;
+    height: 80%;
     width: 97%;
 
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .table{
-    height: auto;
     min-height: 75%;
     width: 100%;
 
@@ -259,7 +278,7 @@ h1{
 }
 
 .thead{
-    height: 30%;
+    height: 20%;
     width: 100%;
 
     display: flex;
@@ -268,20 +287,19 @@ h1{
 
     font-size: 1.1em;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .tbody{
-    min-height: 70%;
-    height: auto;
+    height: 77%;
     width: 100%;
 
     display: flex;
     flex-direction: column;
-}
 
+    overflow-y: auto;
+}
 .info{
-    height: 40%;
+    height: 30%;
     width: 100%;
 
     display: flex;
@@ -304,8 +322,13 @@ h1{
     outline: none;
     border-bottom: 2px solid black;
 
-    font-size: 1.1em;
+    font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;    
+}
+
+.blc-inp input:hover{
+    transition: 0.3s;
+    transform: scale(0.97);
 }
 
 .blc-time{
@@ -342,20 +365,20 @@ h1{
     justify-content: center;
 }
 
+.img-trash{ height: 35px; }
 
 .add-exer{
-    height: 25%;
-    width: 95%;
+    height: 23%;
+    width: 90%;
 
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-
 }
 
 .btnAddExer{
-    height: 90%;
-    width: 90%;
+    height: 70%;
+    width: 85%;
 
     cursor: pointer;
     outline: none;
@@ -364,4 +387,48 @@ h1{
     font-size: 1.3em;
     font-family: Arial, Helvetica, sans-serif;
     background-color: yellow;
+}
+
+.btnAddExer:hover{
+    transition: 0.2s;
+    background-color: rgb(216, 216, 0);
+}
+
+.btnAddExer:active{
+    transition: 0.3s;
+    background-color: rgb(168, 168, 0);
+}
+
+.blc-img button{
+    width: 75%;
+    height: 85%;
+    
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30%;
+
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.blc-img button:hover{
+    transition: 0.2s;
+    background-color: rgb(255, 49, 49);
+}
+
+.blc-img button:active{
+    transition: 0.3s;
+    background-color: rgb(245, 17, 17);
+}
+
+.btn-delete{
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    border: none;
+    background-color: transparent;
 }

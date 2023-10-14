@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LifeFit - Rotina de Treino</title>
     <link rel="shortcut icon" href="../../public/images/academia.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../public/css/createexercise.css">
-    <link rel="stylesheet" href="../../public/css/footer.css">
+    <link rel="stylesheet" href="./createexercise.css">
+    <link rel="stylesheet" href="../../../public/css/footer.css">
 </head>
 <body>
     <div class="container-title">
@@ -19,7 +19,7 @@
             <div class="configs">
                 <div class="block-inp">
                     <input type="text" id="" placeholder="Nome da Rotina de Treino">
-                    <select id="">
+                    <select id="TimeExercises">
                         <option selected>Duração desse treino</option>
                     </select>
                     <button class="addDay">Adicionar dia</button>
@@ -45,12 +45,14 @@
                 <div class="block-workouts">
                     <div class="dayofweek">
                         <div class="select-day">
-                            <select>
+                            <select id="daysWeek">
                                 <option selected>Dia da semana</option>
                             </select>
                         </div>
                         <div class="delete-workouts">
-                            <img src="../../public/images/icon-trash.png" alt="icon lixeira" height="50em" >
+                            <button class="btn-delete">                            
+                                <img src="../../../public/images/icon-trash.png" alt="icon lixeira" height="50em" >
+                            </button>
                         </div>
                     </div>
                     <div class="block-exer">
@@ -63,8 +65,8 @@
                                 <div class="blc-sel">Maximo</div>
                                 <div class="blc-img"></div>
                             </div>
-                            <div class="tbody">
-                                <div class="info">
+                            <div class="tbody" id="table-body">
+                                <!-- <div class="info">
                                     <div class="blc-inp">
                                         <input type="text" placeholder="Exercicio">
                                     </div>
@@ -78,18 +80,20 @@
                                     </div>
                                     <div class="blc-sel">
                                         <select name="" id="">
-                                            <option value="">Carga</option>
+                                            <option selected>Carga</option>
                                         </select>
                                     </div>
                                     <div class="blc-sel">
                                         <select name="" id="">
-                                            <option value="">Carga</option>
+                                            <option selected>Carga</option>
                                         </select>
                                     </div>
                                     <div class="blc-img">
-                                        <img src="../../public/images/icon-trash.png" alt="trash" height="35em">
+                                        <button>
+                                            <img src="../../../public/images/icon-trash.png" alt="trash" height="35em">
+                                        </button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="add-exer">
@@ -120,5 +124,6 @@
             </div>
         </div>
     </div>
+    <script src="./createexercise.js"></script>
 </body>
 </html>
